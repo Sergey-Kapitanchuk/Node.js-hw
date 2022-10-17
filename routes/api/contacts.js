@@ -4,7 +4,7 @@ const ctrl = require("../../controllers/contacts");
 
 const { ctrlWrapper } = require("../../helpers")
 
-const { validateBody, isValidId } = require("../../middlewares");
+const { validateBody, isValidId, validFavoriteBody } = require("../../middlewares");
 
 const { schemas } = require("../../models/contact");
 
@@ -20,6 +20,6 @@ router.delete('/:contactId', isValidId, ctrlWrapper(ctrl.deleteById));
 
 router.put('/:contactId', isValidId, validateBody(schemas.addSchema), ctrlWrapper(ctrl.updateById));
 
-router.patch('/:contactId/favorite', isValidId, validateBody(schemas.updateStatusSchema), ctrlWrapper(ctrl.updateStatusContact))
+router.patch('/:contactId/favorite', isValidId, validFavoriteBody(schemas.updateStatusSchema), ctrlWrapper(ctrl.updateStatusContact))
 
 module.exports = router;

@@ -18,17 +18,6 @@ const contactSchema = new Schema({
     },
 }, { versionKey: false, timestamps: true });
 
-
-// const handlSaveErrors = (error, data, next) => {
-//     const { name, code } = error;
-//     error.status = (name === "MongoServerError" && code === 1100) ?
-// }
-
-// const contactSchema = new Schema({
-//     name: String,
-//     phone: String,
-// });
-
 const addSchema = Joi.object({
     name: Joi.string().required(),
     email: Joi.string().required(),
@@ -36,8 +25,10 @@ const addSchema = Joi.object({
     favorite: Joi.boolean(),
 });
 
+
+
 const updateStatusSchema = Joi.object({
-    favorite: Joi.boolean().required(),
+    favorite: Joi.boolean().required()
 });
 
 const schemas = {
