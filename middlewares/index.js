@@ -3,6 +3,7 @@ const isValidId = require("./isValidId");
 const validFavoriteBody = require("./validFavoriteBody");
 const validateUser = require("./validateUser");
 const authenticate = require("./authenticate");
+const upload = require("./upload");
 
 module.exports = {
     validateBody,
@@ -10,4 +11,5 @@ module.exports = {
     validFavoriteBody,
     validateUser,
     authenticate,
+    upload,
 }
